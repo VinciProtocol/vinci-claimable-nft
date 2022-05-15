@@ -1,5 +1,8 @@
 {
-    "name": "Vinci NFT",
-    "description": "This is a collection of Vinci NFTs",
-    "image": "https://ipfs.io/ipfs/bafybeieizon6otfcikoj4wadgf3eqxd2rgnh7u2kzr3h7mlxoghck3m3su",
+    "name": "Vinci Protocol NFT",
+    "description": "Vinci Protocol’s Kick-Starter NFT",
+    "image": "https://ipfs.io/ipfs/bafybeiaplt4ko2rokzcdwfdm46yntqi7kvmv6epwdv6oxawmnsrq3tzw7q",
+    "external_link": "https://ipfs.io",
+    "seller_fee_basis_points": 500,
+    "fee_recipient": "0x474c58C996b8A607B86DACD6C00E3BBcB41ee7E0"
 }
