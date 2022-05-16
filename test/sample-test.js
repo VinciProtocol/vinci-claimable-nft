@@ -68,7 +68,7 @@ describe("VinciNFT", function () {
     await vincinft.deployed();
 
     await vincinft.mint(["0x3f68e79174daf15b50e15833babc8eb7743e730bb9606f922c48e95314c3905c", "0x320723cfc0bfa9b0f7c5b275a01ffa5e0f111f05723ba5df2b2684ab86bebe06"], 1);
-    expect(await vincinft.hasClaimed()).to.equal(true);
+    expect(await vincinft.hasClaimed(owner.address)).to.equal(true);
 
     expect(await vincinft.tokenURI(1)).to.equal("https://ipfs.io/ipfs/bafybeigp3r2bqvsxwwwopov4bf6l3xdsvrul3sctmzrejbzugya7kxzfye/1.json");
     expect(await vincinft.contractURI()).to.equal("https://ipfs.io/ipfs/bafybeigp3r2bqvsxwwwopov4bf6l3xdsvrul3sctmzrejbzugya7kxzfye/1.json");

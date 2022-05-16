@@ -29,8 +29,8 @@ contract VinciNFT is ERC1155, Ownable {
         _mint(msg.sender, 1, 1, "");
     }
 
-    function hasClaimed() public view returns (bool) {
-        return claimed[msg.sender];
+    function hasClaimed(address addr) public view returns (bool) {
+        return claimed[addr];
     }
 
     function tokenURI(uint256 id) public view returns (string memory) {
