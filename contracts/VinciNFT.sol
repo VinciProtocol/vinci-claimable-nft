@@ -16,25 +16,25 @@ contract VinciNFT is ERC1155, Ownable {
         baseURI = _baseURI;
     }
 
-    function setParams(string memory newBaseURI, bytes32 newMerkleRoot) external onlyOwner {
-        merkleRoot = newMerkleRoot;
-        baseURI = newBaseURI;
+    function setParams(bytes32 _merkleRoot, string memory _baseURI) external onlyOwner {
+        merkleRoot = _merkleRoot;
+        baseURI = _baseURI;
     }
     
-    function mint(bytes32[] calldata _merkleProof, uint256 amount) public {
+    function mint(bytes32[] calldata _merkleProof, uint256 _amount) public {
         require(claimed[msg.sender] == false, "already claimed");
         claimed[msg.sender] = true;
-        bytes32 leaf = keccak256(abi.encodePacked(msg.sender, amount));
+        bytes32 leaf = keccak256(abi.encodePacked(msg.sender, _amount));
         require(MerkleProof.verify(_merkleProof, merkleRoot, leaf) == true, "wrong merkle proof");
         _mint(msg.sender, 1, 1, "");
     }
 
-    function hasClaimed(address addr) public view returns (bool) {
-        return claimed[addr];
+    function hasClaimed(address _addr) public view returns (bool) {
+        return claimed[_addr];
     }
 
-    function tokenURI(uint256 id) public view returns (string memory) {
-        return string(abi.encodePacked(baseURI, Strings.toString(id), ".json"));
+    function tokenURI(uint256 _id) public view returns (string memory) {
+        return string(abi.encodePacked(baseURI, Strings.toString(_id), ".json"));
     }
 
     function contractURI() public view returns (string memory) {
