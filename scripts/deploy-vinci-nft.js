@@ -16,7 +16,7 @@ async function main() {
   // We get the contract to deploy
   const VinciNFT = await hre.ethers.getContractFactory("VinciNFT");
   const vincinft = await VinciNFT.deploy("0x48de10fd865287a0cc654e85a0290008107d0811e55ffd5f808cb8da3dc32fab", 
-    "https://ipfs.io/ipfs/bafybeigp3r2bqvsxwwwopov4bf6l3xdsvrul3sctmzrejbzugya7kxzfye/");
+    "https://ipfs.io/ipfs/bafybeiedzibr7fubelyk5wxa6eaclcy3pwayrtrmo4vxuos7appi7euuiq/");
 
   await vincinft.deployed();
 
